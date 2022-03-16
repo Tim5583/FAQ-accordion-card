@@ -30,3 +30,29 @@
 body {
   font-family: 'Kumbh Sans', sans-serif;
 }
+
+ /* faq  */
+
+ .faq {
+   text-align: center;
+ }
+
+ .accordion {
+   width: 90%;
+   margin: 1rem auto;
+   padding: .5rem
+ }
+
+ .accordion-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .accordion-header::after {
+   content: url("./images/icon-arrow-down.svg")
+ }
+
+ .accordion-body {
+   display: none;
+ }
