@@ -25,34 +25,135 @@
   /* #### Dividers */
 
   --Light-grayish-blue: hsl(240, 5%, 91%);
+  --image-width: 70%;
+  --break-point-main: 800px
 }
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 
 body {
   font-family: 'Kumbh Sans', sans-serif;
+  background-image: linear-gradient(var(--Soft-violet), var(--Soft-blue));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
+
+.container {
+  background-color: var(--Light-grayish-blue);
+  border-radius: 25px;
+  width: 95%;
+  max-width: 400px;
+  position: relative;
+  padding: 8rem .5rem 4rem;
+}
+
+@media (max-width: 900px) {
+  .image {
+    position: absolute;
+    width: var(--image-width);
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  }
+  
+  .image-shadow {
+    position: absolute;
+    width: var(--image-width);
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .image-cube {
+    display: none;
+  }  
+}
+
 
  /* faq  */
 
- .faq {
-   text-align: center;
- }
+.faq {
+  text-align: center;
+}
 
- .accordion {
-   width: 90%;
-   margin: 1rem auto;
-   padding: .5rem
- }
+.accordion {
+  width: 95%;
+  margin: 1rem auto;
+  padding: .5rem;
+  color: var(var(--Very-dark-desaturated-blue));
+}
 
- .accordion-header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
- }
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
 
- .accordion-header::after {
-   content: url("./images/icon-arrow-down.svg")
- }
+.accordion-header::after {
+  content: url("./images/icon-arrow-down.svg");
+  transition: transform 200ms ease-in;
+}
 
- .accordion-body {
-   display: none;
- }
+.accordion-body {
+  color: var(--Dark-grayish-blue);
+  display: none;
+}
+
+.accordion.active .accordion-body{
+  margin-top: .5rem;
+  display: block;
+  text-align: left;
+}
+
+.accordion.active .accordion-header {
+  font-weight: bold;
+}
+
+.accordion.active .accordion-header::after, .accordion-header:hover::after {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    padding: 5rem .5rem 3rem;
+    max-width: 900px;
+    overflow: hidden;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .image {
+    position: relative;
+    left: -20%;
+  }
+
+  .image-shadow {
+    position: absolute;
+    bottom: -35%;
+    left: -25%;
+    width: 100%;
+  }
+
+  .image-cube {
+    position: absolute;
+    left: 0;
+    /* top: 48%;
+    transform: translateX(10%); */
+  }
+  
+}
