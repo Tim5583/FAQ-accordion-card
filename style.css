@@ -99,6 +99,10 @@ body {
   cursor: pointer;
 }
 
+.accordion-header:hover {
+  color: var(--Soft-red);
+}
+
 .accordion-header::after {
   content: url("./images/icon-arrow-down.svg");
   transition: transform 200ms ease-in;
@@ -130,11 +134,15 @@ body {
     align-items: center;
     padding: 5rem .5rem 3rem;
     max-width: 900px;
-    overflow: hidden;
   }
 
   .header {
     position: relative;
+  }
+
+  .image-div {
+    overflow-x: hidden;
+    margin-left: -.5rem;
   }
 
   .image {
@@ -151,9 +159,8 @@ body {
 
   .image-cube {
     position: absolute;
-    left: 0;
-    /* top: 48%;
-    transform: translateX(10%); */
+    left: -30%;
+    top: 42%;
   }
   
 }
